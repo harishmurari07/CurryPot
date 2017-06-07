@@ -11,23 +11,24 @@ import java.util.ArrayList;
 
 public class VegetarianAdapter extends RecyclerView.Adapter<VegetarianAdapter.MyViewHolder> {
 
-    private ArrayList<DataModel> dataSet;
+    private ArrayList<VegDataModel> dataSet;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView textViewName;
-        TextView textViewVersion;
+        TextView textViewprice;
         ImageView imageViewIcon;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             this.textViewName = (TextView) itemView.findViewById(R.id.textViewName);
+            this.textViewprice = (TextView) itemView.findViewById(R.id.textViewprice);
 
             this.imageViewIcon = (ImageView) itemView.findViewById(R.id.imageView);
         }
     }
 
-    public VegetarianAdapter(ArrayList<DataModel> data) {
+    public VegetarianAdapter(ArrayList<VegDataModel> data) {
         this.dataSet = data;
     }
 
@@ -46,10 +47,11 @@ public class VegetarianAdapter extends RecyclerView.Adapter<VegetarianAdapter.My
     public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
 
         TextView textViewName = holder.textViewName;
-        TextView textViewVersion = holder.textViewVersion;
+        TextView textViewprice = holder.textViewprice;
         ImageView imageView = holder.imageViewIcon;
 
         textViewName.setText(dataSet.get(listPosition).getName());
+        textViewprice.setText(dataSet.get(listPosition).getPrice());
 
         imageView.setImageResource(dataSet.get(listPosition).getImage());
     }

@@ -7,7 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import com.example.harishmurari.curries.VegetarianAdapter;
-import com.example.harishmurari.curries.DataModel;
+import com.example.harishmurari.curries.VegDataModel;
 import com.example.harishmurari.curries.MyData;
 import com.example.harishmurari.curries.R;
 
@@ -20,7 +20,7 @@ public class VegetarianActivity extends AppCompatActivity {
     private static RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
-    private static ArrayList<DataModel> data;
+    private static ArrayList<VegDataModel> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +35,11 @@ public class VegetarianActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        data = new ArrayList<DataModel>();
+        data = new ArrayList<VegDataModel>();
         for (int i = 0; i < MyData.nameArray.length; i++) {
-            data.add(new DataModel(
+            data.add(new VegDataModel(
                     MyData.nameArray[i],
-                    MyData.versionArray[i],
+                    MyData.price[i],
                     MyData.id_[i],
                     MyData.drawableArray[i]
             ));

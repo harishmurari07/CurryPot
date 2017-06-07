@@ -4,17 +4,17 @@ package com.example.harishmurari.curries;
  * Created by harishmurari on 6/5/2017.
  */
 
-public class DataModel {
+public class VegDataModel {
 
 
     String name;
-    String version;
+    String price;
     int id_;
     int image;
 
-    public DataModel(String name, String version, int id_, int image) {
+    public VegDataModel(String name, String price, int id_, int image) {
         this.name = name;
-        this.version = version;
+        this.price = price;
         this.id_ = id_;
         this.image=image;
     }
@@ -25,8 +25,8 @@ public class DataModel {
     }
 
 
-    public String getVersion() {
-        return version;
+    public String getPrice() {
+        return price;
     }
 
     public int getImage() {
