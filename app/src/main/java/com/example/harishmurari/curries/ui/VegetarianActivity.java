@@ -6,27 +6,25 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
-import com.example.harishmurari.curries.VegetarianAdapter;
-import com.example.harishmurari.curries.VegDataModel;
+
+import com.example.harishmurari.curries.adapters.Adapter;
+import com.example.harishmurari.curries.model.DataModel;
 import com.example.harishmurari.curries.MyData;
 import com.example.harishmurari.curries.R;
 
 import java.util.ArrayList;
 
-
 public class VegetarianActivity extends AppCompatActivity {
-
 
     private static RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
-    private static ArrayList<VegDataModel> data;
+    private static ArrayList<DataModel> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vegetarian_activity);
-
 
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -35,20 +33,18 @@ public class VegetarianActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        data = new ArrayList<VegDataModel>();
-        for (int i = 0; i < MyData.nameArray.length; i++) {
-            data.add(new VegDataModel(
-                    MyData.nameArray[i],
+        data = new ArrayList<>();
+        for (int i = 0; i < MyData.vegcurriesArray.length; i++) {
+            data.add(new DataModel(
+                    MyData.vegcurriesArray[i],
                     MyData.price[i],
-                    MyData.id_[i],
                     MyData.drawableArray[i]
             ));
         }
 
-        adapter = new VegetarianAdapter(data);
+        adapter = new Adapter(data);
         recyclerView.setAdapter(adapter);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
