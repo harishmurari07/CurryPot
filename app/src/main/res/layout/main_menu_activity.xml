@@ -11,9 +11,10 @@
         android:background="?colorPrimary"
         android:elevation="4dp"/>
 
-    <ListView
+    <GridView
         android:id="@+id/main_menu_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:numColumns="auto_fit"/>
 
 </android.support.design.widget.CoordinatorLayout>

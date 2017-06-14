@@ -14,17 +14,18 @@ import com.example.harishmurari.curries.R;
 
 import java.util.ArrayList;
 
-public class VegetarianActivity extends AppCompatActivity {
+public class VegetarianActivity extends AppCompatActivity implements Adapter.OnSelectedCurry{
 
-    private static RecyclerView.Adapter adapter;
+    private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    private static RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private static ArrayList<DataModel> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.vegetarian_activity);
+        setContentView(R.layout.main_activity);
+        setTitle("Vegetarian");
 
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -42,7 +43,7 @@ public class VegetarianActivity extends AppCompatActivity {
             ));
         }
 
-        adapter = new Adapter(data);
+        adapter = new Adapter(this, this, data);
         recyclerView.setAdapter(adapter);
     }
 
@@ -53,5 +54,13 @@ public class VegetarianActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
+    }
 
+    @Override
+    public void onClickedCurry(DataModel data) {
+
+    }
 }

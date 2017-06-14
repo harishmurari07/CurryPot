@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.GridView;
 
 import com.example.harishmurari.curries.MyData;
 import com.example.harishmurari.curries.R;
@@ -27,10 +27,10 @@ public class MainMenuActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 R.layout.main_menu_activity_listitem, MyData.mainmenuArray);
 
-        ListView listView = (ListView) findViewById(R.id.main_menu_list);
-        listView.setAdapter(adapter);
+        GridView gridView = (GridView) findViewById(R.id.main_menu_list);
+        gridView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 launchSelectedActivity(position);

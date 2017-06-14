@@ -37,12 +37,12 @@ public class MyData {
 
     public static Integer[] drawableArray =
             {
-                    R.drawable.cupcake,
-                    R.drawable.cupcake,
-                    R.drawable.cupcake,
-                    R.drawable.cupcake,
-                    R.drawable.cupcake,
-                    R.drawable.cupcake
+                    R.drawable.tomato_dal,
+                    R.drawable.tomato_curry,
+                    R.drawable.egg_curry,
+                    R.drawable.bendakai_fry,
+                    R.drawable.egg_masala,
+                    R.drawable.veg_manchurian
             };
 
     public static String[] nonVegCurriesArray =
@@ -65,11 +65,50 @@ public class MyData {
 
     public static Integer[] nonVegDrawableArray =
             {
-                    R.drawable.cupcake,
-                    R.drawable.cupcake,
-                    R.drawable.cupcake,
-                    R.drawable.cupcake,
-                    R.drawable.cupcake
+                    R.drawable.chicken_fry,
+                    R.drawable.chicken_curry,
+                    R.drawable.fish_pulusu,
+                    R.drawable.chicken_65,
+                    R.drawable.mutton_curry
+            };
+
+    public static String[] whiteRiceArray =
+            {
+                    "Small Bowl",
+                    "Large Bowl",
+                    "Jumbo Bowl"
+            };
+
+    public static String[] riceprice =
+            {
+                    "20",
+                    "30",
+                    "50"
+            };
+
+    public static Integer[] riceDrawableArray =
+            {
+                    R.drawable.white_rice_small,
+                    R.drawable.white_rice_medium,
+                    R.drawable.white_rice_jumbo
+            };
+
+    public static String[] lunchBoxArray =
+            {
+                    "Lunch Box",
+                    "Thali"
+            };
+
+    public static String[] lunchprice =
+            {
+                    "50",
+                    "75"
+            };
+
+    public static Integer[] lunchDrawableArray =
+            {
+                    R.drawable.lunch_box,
+                    R.drawable.thali
             };
 
     }
