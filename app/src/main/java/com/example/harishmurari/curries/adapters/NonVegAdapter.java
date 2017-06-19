@@ -18,44 +18,45 @@ import com.example.harishmurari.curries.model.CurryItem;
 
 import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
+/**
+ * Created by harishmurari on 6/17/2017.
+ */
+
+public class NonVegAdapter extends RecyclerView.Adapter<NonVegAdapter.NonVegViewHolder> {
 
     private ArrayList<CurryItem> dataSet;
     private Context context;
-    private OnSelectedCurry onSelectedCurry;
+    private OnNonVegSelectedCurry onSelectedCurry;
     private CartItems cartItems;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class NonVegViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView textViewName;
-        TextView textViewprice;
+        TextView textViewPrice;
         ImageView imageViewIcon;
         Button add, remove;
 
-        public MyViewHolder(View itemView) {
+        public NonVegViewHolder(View itemView) {
             super(itemView);
             this.textViewName = (TextView) itemView.findViewById(R.id.curry_name);
-            this.textViewprice = (TextView) itemView.findViewById(R.id.curry_price);
+            this.textViewPrice = (TextView) itemView.findViewById(R.id.curry_price);
             this.imageViewIcon = (ImageView) itemView.findViewById(R.id.curry_image);
             this.add = (Button) itemView.findViewById(R.id.add_button);
             this.remove = (Button) itemView.findViewById(R.id.remove_button);
-            textViewName.setOnClickListener(this);
-            textViewprice.setOnClickListener(this);
-            imageViewIcon.setOnClickListener(this);
             add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     add.setVisibility(View.GONE);
                     remove.setVisibility(View.VISIBLE);
                     cartItems.addItemtoCart(dataSet.get(getAdapterPosition()));
-                    Toast.makeText(context, "Added : " + cartItems.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Added : "+ cartItems.toString(), Toast.LENGTH_SHORT).show();
                 }
             });
 
             remove.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    remove.setVisibility(View.GONE);
+                    remove.setVisibility(view.GONE);
                     add.setVisibility(View.VISIBLE);
                     if (cartItems.checkProductInCart(dataSet.get(getAdapterPosition()))) {
                         cartItems.removeItemfromCart(dataSet.get(getAdapterPosition()));
@@ -71,31 +72,30 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         }
     }
 
-    public Adapter(Context context, OnSelectedCurry selectedCurry, ArrayList<CurryItem> data) {
+    public NonVegAdapter(Context context, OnNonVegSelectedCurry selectedCurry, ArrayList<CurryItem> data ) {
         this.dataSet = data;
         onSelectedCurry = selectedCurry;
         this.context = context;
         this.cartItems = new CartItems();
     }
 
-    public interface OnSelectedCurry {
+    public interface OnNonVegSelectedCurry {
         void onClickedCurry(CurryItem data);
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent,
-                                           int viewType) {
+    public NonVegViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item_view, parent, false);
 
-        return new MyViewHolder(view);
+        return new NonVegViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
+    public void onBindViewHolder(NonVegAdapter.NonVegViewHolder holder, int listPosition) {
 
         TextView textViewName = holder.textViewName;
-        TextView textViewprice = holder.textViewprice;
+        TextView textViewprice = holder.textViewPrice;
         ImageView imageView = holder.imageViewIcon;
 
         textViewName.setText(dataSet.get(listPosition).getCurryName());
@@ -114,4 +114,5 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     public int getItemCount() {
         return dataSet.size();
     }
+
 }

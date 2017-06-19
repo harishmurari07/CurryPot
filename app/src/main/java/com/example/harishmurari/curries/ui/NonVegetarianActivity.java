@@ -11,7 +11,8 @@ import android.view.Menu;
 import com.example.harishmurari.curries.MyData;
 import com.example.harishmurari.curries.R;
 import com.example.harishmurari.curries.adapters.Adapter;
-import com.example.harishmurari.curries.model.DataModel;
+import com.example.harishmurari.curries.adapters.NonVegAdapter;
+import com.example.harishmurari.curries.model.CurryItem;
 
 import java.util.ArrayList;
 
@@ -19,12 +20,12 @@ import java.util.ArrayList;
  * Created by harishmurari on 6/7/2017.
  */
 
-public class NonVegetarianActivity extends AppCompatActivity implements Adapter.OnSelectedCurry{
+public class NonVegetarianActivity extends AppCompatActivity implements NonVegAdapter.OnNonVegSelectedCurry{
 
     private static RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
-    private static ArrayList<DataModel> data;
+    private static ArrayList<CurryItem> data;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,14 +42,14 @@ public class NonVegetarianActivity extends AppCompatActivity implements Adapter.
 
         data = new ArrayList<>();
         for (int i = 0; i < MyData.nonVegCurriesArray.length; i++) {
-            data.add(new DataModel(
+            data.add(new CurryItem(
                     MyData.nonVegCurriesArray[i],
                     MyData.nonVegPrice[i],
                     MyData.nonVegDrawableArray[i]
             ));
         }
 
-        adapter = new Adapter(this, this, data);
+        adapter = new NonVegAdapter(this, this, data);
         recyclerView.setAdapter(adapter);
     }
 
@@ -60,7 +61,7 @@ public class NonVegetarianActivity extends AppCompatActivity implements Adapter.
     }
 
     @Override
-    public void onClickedCurry(DataModel data) {
+    public void onClickedCurry(CurryItem data) {
 
     }
 }

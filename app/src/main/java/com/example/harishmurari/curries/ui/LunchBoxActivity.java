@@ -12,7 +12,7 @@ import android.view.Menu;
 import com.example.harishmurari.curries.MyData;
 import com.example.harishmurari.curries.R;
 import com.example.harishmurari.curries.adapters.Adapter;
-import com.example.harishmurari.curries.model.DataModel;
+import com.example.harishmurari.curries.model.CurryItem;
 
 import java.util.ArrayList;
 
@@ -26,7 +26,7 @@ public class LunchBoxActivity extends AppCompatActivity implements Adapter.OnSel
     private static RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
-    private static ArrayList<DataModel> data;
+    private static ArrayList<CurryItem> data;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class LunchBoxActivity extends AppCompatActivity implements Adapter.OnSel
 
         data = new ArrayList<>();
         for (int i = 0; i < MyData.lunchBoxArray.length; i++) {
-            data.add(new DataModel(
+            data.add(new CurryItem(
                     MyData.lunchBoxArray[i],
                     MyData.lunchprice[i],
                     MyData.lunchDrawableArray[i]
@@ -62,10 +62,10 @@ public class LunchBoxActivity extends AppCompatActivity implements Adapter.OnSel
     }
 
     @Override
-    public void onClickedCurry(DataModel data) {
+    public void onClickedCurry(CurryItem data) {
         Intent intent = new Intent(LunchBoxActivity.this, WhiteRiceActivity.class);
-        intent.putExtra("Image", data.getImage());
-        intent.putExtra("name", data.getName());
-        intent.putExtra("price", data.getName());
+        intent.putExtra("Image", data.getCurryImage());
+        intent.putExtra("name", data.getCurryName());
+        intent.putExtra("price", data.getCurryName());
     }
 }

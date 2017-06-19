@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.harishmurari.curries.MyData;
 import com.example.harishmurari.curries.R;
 import com.example.harishmurari.curries.adapters.Adapter;
-import com.example.harishmurari.curries.model.DataModel;
+import com.example.harishmurari.curries.model.CurryItem;
 
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ public class WhiteRiceActivity extends AppCompatActivity implements Adapter.OnSe
     private static RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
-    private static ArrayList<DataModel> data;
+    private static ArrayList<CurryItem> data;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class WhiteRiceActivity extends AppCompatActivity implements Adapter.OnSe
 
         data = new ArrayList<>();
         for (int i = 0; i < MyData.whiteRiceArray.length; i++) {
-            data.add(new DataModel(
+            data.add(new CurryItem(
                     MyData.whiteRiceArray[i],
                     MyData.riceprice[i],
                     MyData.riceDrawableArray[i]
@@ -62,7 +62,7 @@ public class WhiteRiceActivity extends AppCompatActivity implements Adapter.OnSe
     }
 
     @Override
-    public void onClickedCurry(DataModel data) {
-        Toast.makeText(this, "selected : "+" name = " + data.getName(), Toast.LENGTH_SHORT).show();
+    public void onClickedCurry(CurryItem data) {
+        Toast.makeText(this, "selected : "+" name = " + data.getCurryName(), Toast.LENGTH_SHORT).show();
     }
 }

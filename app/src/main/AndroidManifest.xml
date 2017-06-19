@@ -27,6 +27,9 @@
             android:parentActivityName=".ui.MainMenuActivity"/>
         <activity android:name="com.example.harishmurari.curries.ui.WhiteRiceActivity"
             android:parentActivityName=".ui.MainMenuActivity"/>
+        <activity android:name="com.example.harishmurari.curries.ui.CartActivity" />
+
+
     </application>
 
 </manifest>
