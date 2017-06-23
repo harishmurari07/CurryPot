@@ -3,13 +3,10 @@ package com.example.harishmurari.curries.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.GridView;
 
 import com.example.harishmurari.curries.MyData;
 import com.example.harishmurari.curries.R;
@@ -20,25 +17,14 @@ import com.example.harishmurari.curries.R;
 
 public class MainMenuActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu_activity);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.main_menu_activity_listitem, MyData.mainmenuArray);
-
-        GridView gridView = (GridView) findViewById(R.id.main_menu_list);
-        gridView.setAdapter(adapter);
-
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                launchSelectedActivity(position);
-            }
-        });
-
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new MainMenuFragment()).commit();
+        }
     }
 
     @Override
@@ -57,7 +43,6 @@ public class MainMenuActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
 
     private void launchCartActivity(){
@@ -66,21 +51,31 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void launchSelectedActivity(int position) {
-        Intent intent = null;
         switch (position) {
             case MyData.VEGETARIAN:
-                intent = new Intent(MainMenuActivity.this, VegetarianActivity.class);
+
+                Intent intent = new Intent(this, VegetarianItemsActivity.class);
+                startActivity(intent);
+//                replaceFragment(VegetarianItemsFragment.getInstance());
                 break;
             case MyData.NON_VEGETARIAN:
-                intent = new Intent(MainMenuActivity.this, NonVegetarianActivity.class);
+                replaceFragment(new NonVegetarianItemsFragment());
                 break;
             case MyData.WHITE_RICE:
-                intent = new Intent(MainMenuActivity.this, WhiteRiceActivity.class);
+                replaceFragment(new LunchBoxItemsFragment());
                 break;
             case MyData.LUNCH_BOX:
-                intent = new Intent(MainMenuActivity.this, LunchBoxActivity.class);
+
+                replaceFragment(new WhiteRiceItemsFragment());
                 break;
         }
-        startActivity(intent);
+    }
+
+    public void replaceFragment(Fragment fragmentToReplace) {
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container, fragmentToReplace)
+                .addToBackStack(null)
+                .commit();
+
     }
 }

@@ -1,14 +1,11 @@
 package com.example.harishmurari.curries.ui;
 
-import android.app.ActionBar;
-import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.example.harishmurari.curries.R;
 import com.example.harishmurari.curries.adapters.CartAdapter;

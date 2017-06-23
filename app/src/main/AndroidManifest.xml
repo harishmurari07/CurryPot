@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity
             android:name="com.example.harishmurari.curries.ui.MainMenuActivity"
@@ -19,17 +19,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.harishmurari.curries.ui.VegetarianActivity"
-            android:parentActivityName=".ui.MainMenuActivity"/>
-        <activity android:name="com.example.harishmurari.curries.ui.LunchBoxActivity"
-            android:parentActivityName=".ui.MainMenuActivity"/>
-        <activity android:name="com.example.harishmurari.curries.ui.NonVegetarianActivity"
-            android:parentActivityName=".ui.MainMenuActivity"/>
-        <activity android:name="com.example.harishmurari.curries.ui.WhiteRiceActivity"
-            android:parentActivityName=".ui.MainMenuActivity"/>
+        <!--<activity android:name="com.example.harishmurari.curries.ui.VegetarianItemsFragment"-->
+        <!--android:parentActivityName=".ui.MainMenuActivity"/>-->
+        <!--<activity android:name="com.example.harishmurari.curries.ui.LunchBoxItemsFragmentgment"-->
+        <!--android:parentActivityName=".ui.MainMenuActivity"/>-->
+        <!--<activity android:name="com.example.harishmurari.curries.ui.NonVegetarianItemsFragmentgment"-->
+        <!--android:parentActivityName=".ui.MainMenuActivity"/>-->
+        <!--<activity android:name="com.example.harishmurari.curries.ui.WhiteRiceItemsFragmentgment"-->
+        <!--android:parentActivityName=".ui.MainMenuActivity"/>-->
         <activity android:name="com.example.harishmurari.curries.ui.CartActivity" />
 
-
+        <activity android:name=".ui.VegetarianItemsActivity" />
     </application>
 
 </manifest>

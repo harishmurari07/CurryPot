@@ -3,11 +3,16 @@ package com.example.harishmurari.curries.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.harishmurari.curries.MyData;
 import com.example.harishmurari.curries.R;
@@ -16,12 +21,7 @@ import com.example.harishmurari.curries.model.CurryItem;
 
 import java.util.ArrayList;
 
-/**
- * Created by harishmurari on 6/7/2017.
- */
-
-public class LunchBoxActivity extends AppCompatActivity implements Adapter.OnSelectedCurry {
-
+public class NonVegetarianItemsFragment extends Fragment implements Adapter.OnSelectedCurry{
 
     private static RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -29,43 +29,38 @@ public class LunchBoxActivity extends AppCompatActivity implements Adapter.OnSel
     private static ArrayList<CurryItem> data;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
-        setTitle("Lunch Box");
+        setRetainInstance(true);
+    }
 
-        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.main_activity, container, false);
+
+        recyclerView = (RecyclerView)view.findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
 
-        layoutManager = new GridLayoutManager(this, 2);
+        layoutManager = new GridLayoutManager(getActivity(), 2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         data = new ArrayList<>();
-        for (int i = 0; i < MyData.lunchBoxArray.length; i++) {
+        for (int i = 0; i < MyData.nonVegCurriesArray.length; i++) {
             data.add(new CurryItem(
-                    MyData.lunchBoxArray[i],
-                    MyData.lunchprice[i],
-                    MyData.lunchDrawableArray[i]
+                    MyData.nonVegCurriesArray[i],
+                    MyData.nonVegPrice[i],
+                    MyData.nonVegDrawableArray[i]
             ));
         }
 
-        adapter = new Adapter(this, this, data);
+        adapter = new Adapter(getActivity(), this, data);
         recyclerView.setAdapter(adapter);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        return view;
     }
 
     @Override
     public void onClickedCurry(CurryItem data) {
-        Intent intent = new Intent(LunchBoxActivity.this, WhiteRiceActivity.class);
-        intent.putExtra("Image", data.getCurryImage());
-        intent.putExtra("name", data.getCurryName());
-        intent.putExtra("price", data.getCurryName());
     }
 }
