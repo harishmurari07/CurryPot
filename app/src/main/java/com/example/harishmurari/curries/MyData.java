@@ -25,14 +25,14 @@ public class MyData {
                     "Veg Manchuria"
             };
 
-    public static String[] price =
+    public static double [] price =
             {
-                    "15",
-                    "15",
-                    "25",
-                    "25",
-                    "35",
-                    "20"
+                    15,
+                    15,
+                    25,
+                    25,
+                    35,
+                    20
             };
 
     public static Integer[] drawableArray =
@@ -54,13 +54,13 @@ public class MyData {
                     "Mutton Curry"
             };
 
-    public static String[] nonVegPrice =
+    public static double[] nonVegPrice =
             {
-                    "25",
-                    "25",
-                    "35",
-                    "30",
-                    "50"
+                    25,
+                    25,
+                    35,
+                    30,
+                    50
             };
 
     public static Integer[] nonVegDrawableArray =
@@ -79,11 +79,11 @@ public class MyData {
                     "Jumbo Bowl"
             };
 
-    public static String[] riceprice =
+    public static double[] riceprice =
             {
-                    "20",
-                    "30",
-                    "50"
+                    20,
+                    30,
+                    50
             };
 
     public static Integer[] riceDrawableArray =
@@ -99,10 +99,10 @@ public class MyData {
                     "Thali"
             };
 
-    public static String[] lunchprice =
+    public static double[] lunchprice =
             {
-                    "50",
-                    "75"
+                    50,
+                    75
             };
 
     public static Integer[] lunchDrawableArray =

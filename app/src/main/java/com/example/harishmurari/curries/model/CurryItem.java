@@ -7,10 +7,10 @@ package com.example.harishmurari.curries.model;
 public class CurryItem {
 
     private String curryName;
-    private String curryPrice;
+    private double curryPrice;
     private int curryImage;
 
-    public CurryItem(String curryName, String curryPrice, int curryImage) {
+    public CurryItem(String curryName, double curryPrice, int curryImage) {
         this.curryName = curryName;
         this.curryPrice = curryPrice;
         this.curryImage = curryImage;
@@ -20,7 +20,7 @@ public class CurryItem {
         return curryName;
     }
 
-    public String getCurryPrice() { return curryPrice; }
+    public double getCurryPrice() { return curryPrice; }
 
     public int getCurryImage() {
         return curryImage;

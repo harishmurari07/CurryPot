@@ -48,7 +48,7 @@ public class NonVegAdapter extends RecyclerView.Adapter<NonVegAdapter.NonVegView
                 public void onClick(View view) {
                     add.setVisibility(View.GONE);
                     remove.setVisibility(View.VISIBLE);
-                    cartItems.addItemtoCart(dataSet.get(getAdapterPosition()));
+                    cartItems.addItemToCart(dataSet.get(getAdapterPosition()));
                     Toast.makeText(context, "Added : "+ cartItems.toString(), Toast.LENGTH_SHORT).show();
                 }
             });

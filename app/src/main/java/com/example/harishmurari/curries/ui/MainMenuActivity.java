@@ -59,14 +59,19 @@ public class MainMenuActivity extends AppCompatActivity {
 //                replaceFragment(VegetarianItemsFragment.getInstance());
                 break;
             case MyData.NON_VEGETARIAN:
-                replaceFragment(new NonVegetarianItemsFragment());
+                Intent intentn = new Intent(this, NonVegetarianItemsActivity.class);
+                startActivity(intentn);
+        //        replaceFragment(new NonVegetarianItemsFragment());
                 break;
             case MyData.WHITE_RICE:
-                replaceFragment(new LunchBoxItemsFragment());
+                Intent intentw = new Intent(this, WhiteRiceItemsActivity.class);
+                startActivity(intentw);
+        //        replaceFragment(new LunchBoxItemsFragment());
                 break;
             case MyData.LUNCH_BOX:
-
-                replaceFragment(new WhiteRiceItemsFragment());
+                Intent intent1 = new Intent(this, LunchBoxItemsActivity.class);
+                startActivity(intent1);
+        //        replaceFragment(new WhiteRiceItemsFragment());
                 break;
         }
     }

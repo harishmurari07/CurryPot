@@ -13,6 +13,7 @@ import com.example.harishmurari.curries.model.CartItems;
 import com.example.harishmurari.curries.model.CurryItem;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by harishmurari on 6/15/2017.
@@ -23,6 +24,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnCur
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
+    Map<CurryItem, Integer> cartMap;
     private ArrayList<CurryItem> cartItems;
 
     @Override
@@ -38,7 +40,8 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnCur
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        cartItems = new ArrayList<>();
+
+        cartItems = new ArrayList<>(cartMap.keySet());
         adapter = new CartAdapter(this, this, cartItems);
         recyclerView.setAdapter(adapter);
     }
