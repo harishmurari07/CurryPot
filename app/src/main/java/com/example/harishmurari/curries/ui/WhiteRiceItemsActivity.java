@@ -15,8 +15,8 @@ public class WhiteRiceItemsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu_activity);
-//        if(savedInstanceState == null){
-//            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, WhiteRiceItemsActivity.getInstance()).commit();
-//        }
+        if(savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, WhiteRiceItemsFragment.getInstance()).commit();
+        }
     }
 }

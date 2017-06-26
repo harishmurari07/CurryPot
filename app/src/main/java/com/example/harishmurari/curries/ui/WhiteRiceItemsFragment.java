@@ -27,6 +27,14 @@ public class WhiteRiceItemsFragment extends Fragment implements Adapter.OnSelect
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
     private static ArrayList<CurryItem> data;
+    private static WhiteRiceItemsFragment whiteRiceItemsFragment;
+
+    public static WhiteRiceItemsFragment getInstance() {
+        if(whiteRiceItemsFragment == null) {
+            whiteRiceItemsFragment = new WhiteRiceItemsFragment();
+        }
+        return whiteRiceItemsFragment;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

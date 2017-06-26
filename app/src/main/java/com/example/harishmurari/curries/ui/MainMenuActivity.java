@@ -51,29 +51,31 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void launchSelectedActivity(int position) {
+        Intent intent = null;
         switch (position) {
             case MyData.VEGETARIAN:
 
-                Intent intent = new Intent(this, VegetarianItemsActivity.class);
-                startActivity(intent);
+                 intent = new Intent(this, VegetarianItemsActivity.class);
+ //               startActivity(intent);
 //                replaceFragment(VegetarianItemsFragment.getInstance());
                 break;
             case MyData.NON_VEGETARIAN:
-                Intent intentn = new Intent(this, NonVegetarianItemsActivity.class);
-                startActivity(intentn);
+                 intent = new Intent(this, NonVegetarianItemsActivity.class);
+        //        startActivity(intentn);
         //        replaceFragment(new NonVegetarianItemsFragment());
                 break;
             case MyData.WHITE_RICE:
-                Intent intentw = new Intent(this, WhiteRiceItemsActivity.class);
-                startActivity(intentw);
+                 intent = new Intent(this, WhiteRiceItemsActivity.class);
+         //       startActivity(intentw);
         //        replaceFragment(new LunchBoxItemsFragment());
                 break;
             case MyData.LUNCH_BOX:
-                Intent intent1 = new Intent(this, LunchBoxItemsActivity.class);
-                startActivity(intent1);
+                 intent = new Intent(this, LunchBoxItemsActivity.class);
+         //       startActivity(intent1);
         //        replaceFragment(new WhiteRiceItemsFragment());
                 break;
         }
+        startActivity(intent);
     }
 
     public void replaceFragment(Fragment fragmentToReplace) {

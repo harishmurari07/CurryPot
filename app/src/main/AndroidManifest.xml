@@ -30,6 +30,9 @@
         <activity android:name="com.example.harishmurari.curries.ui.CartActivity" />
 
         <activity android:name=".ui.VegetarianItemsActivity" />
+        <activity android:name=".ui.NonVegetarianItemsActivity" />
+        <activity android:name=".ui.WhiteRiceItemsActivity" />
+        <activity android:name=".ui.LunchBoxItemsActivity" />
     </application>
 
 </manifest>

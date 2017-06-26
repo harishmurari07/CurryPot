@@ -27,6 +27,14 @@ public class NonVegetarianItemsFragment extends Fragment implements Adapter.OnSe
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
     private static ArrayList<CurryItem> data;
+    private static NonVegetarianItemsFragment nonVegetarianItemsFragment;
+
+    public static NonVegetarianItemsFragment getInstance() {
+        if(nonVegetarianItemsFragment == null) {
+            nonVegetarianItemsFragment = new NonVegetarianItemsFragment();
+        }
+        return nonVegetarianItemsFragment;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
