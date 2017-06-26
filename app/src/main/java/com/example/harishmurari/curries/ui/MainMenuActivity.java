@@ -10,6 +10,11 @@ import android.view.MenuItem;
 
 import com.example.harishmurari.curries.MyData;
 import com.example.harishmurari.curries.R;
+import com.example.harishmurari.curries.Utility;
+import com.example.harishmurari.curries.model.CurryItem;
+import com.facebook.stetho.Stetho;
+
+import java.util.ArrayList;
 
 /**
  * Created by harishmurari on 6/7/2017.
@@ -21,10 +26,18 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu_activity);
-
+        Utility.clear(this);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new MainMenuFragment()).commit();
         }
+
+        Stetho.initialize(
+                Stetho.newInitializerBuilder(this)
+                        .enableDumpapp(
+                                Stetho.defaultDumperPluginsProvider(this))
+                        .enableWebKitInspector(
+                                Stetho.defaultInspectorModulesProvider(this))
+                        .build());
     }
 
     @Override
@@ -47,42 +60,30 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private void launchCartActivity(){
         Intent i = new Intent(MainMenuActivity.this, CartActivity.class);
+        ArrayList<CurryItem> curryItemsCart = Utility.retriveCart(this);
+        i.putParcelableArrayListExtra(Intent.EXTRA_TEXT, curryItemsCart);
         startActivity(i);
     }
 
     public void launchSelectedActivity(int position) {
-        Intent intent = null;
         switch (position) {
             case MyData.VEGETARIAN:
-
-                 intent = new Intent(this, VegetarianItemsActivity.class);
- //               startActivity(intent);
-//                replaceFragment(VegetarianItemsFragment.getInstance());
+                launchScreen(VegetarianItemsActivity.class);
                 break;
             case MyData.NON_VEGETARIAN:
-                 intent = new Intent(this, NonVegetarianItemsActivity.class);
-        //        startActivity(intentn);
-        //        replaceFragment(new NonVegetarianItemsFragment());
+                launchScreen(NonVegetarianItemsActivity.class);
                 break;
             case MyData.WHITE_RICE:
-                 intent = new Intent(this, WhiteRiceItemsActivity.class);
-         //       startActivity(intentw);
-        //        replaceFragment(new LunchBoxItemsFragment());
+                launchScreen(WhiteRiceItemsActivity.class);
                 break;
             case MyData.LUNCH_BOX:
-                 intent = new Intent(this, LunchBoxItemsActivity.class);
-         //       startActivity(intent1);
-        //        replaceFragment(new WhiteRiceItemsFragment());
+                launchScreen(LunchBoxItemsActivity.class);
                 break;
         }
-        startActivity(intent);
     }
 
-    public void replaceFragment(Fragment fragmentToReplace) {
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, fragmentToReplace)
-                .addToBackStack(null)
-                .commit();
-
+    public void launchScreen(Class launchActivity){
+        Intent launchIntent = new Intent(this, launchActivity);
+        startActivity(launchIntent);
     }
 }

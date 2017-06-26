@@ -16,7 +16,7 @@ public class LunchBoxItemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu_activity);
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, LunchBoxItemsFragment.getInstance()).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new LunchBoxItemsFragment()).commit();
         }
     }
 }

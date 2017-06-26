@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.harishmurari.curries.R;
+import com.example.harishmurari.curries.Utility;
 import com.example.harishmurari.curries.model.CartItems;
 import com.example.harishmurari.curries.model.CurryItem;
 
@@ -45,21 +46,23 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    add.setVisibility(View.GONE);
-                    remove.setVisibility(View.VISIBLE);
-                    cartItems.addItemToCart(dataSet.get(getAdapterPosition()));
-                    Toast.makeText(context, "Added : " + cartItems.toString(), Toast.LENGTH_SHORT).show();
+                    if (!Utility.isItemAvailable(context, dataSet.get(getAdapterPosition()))) {
+                        Utility.saveToCart(context, dataSet.get(getAdapterPosition()).getCurryName(), dataSet.get(getAdapterPosition()));
+                        Toast.makeText(context, "Added", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(context, "Item already Added", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
 
             remove.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    remove.setVisibility(View.GONE);
-                    add.setVisibility(View.VISIBLE);
-                    if (cartItems.checkProductInCart(dataSet.get(getAdapterPosition()))) {
-                        cartItems.removeItemfromCart(dataSet.get(getAdapterPosition()));
+                    if (Utility.isItemAvailable(context, dataSet.get(getAdapterPosition()))) {
+                        Utility.removeFromCart(context, dataSet.get(getAdapterPosition()).getCurryName());
                         Toast.makeText(context, "Removed", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(context, "Item not exists", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -92,22 +95,23 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
         TextView textViewName = holder.textViewName;
         TextView textViewprice = holder.textViewprice;
         ImageView imageView = holder.imageViewIcon;
 
-        textViewName.setText(dataSet.get(listPosition).getCurryName());
-        textViewprice.setText(String.format("₹%s", dataSet.get(listPosition).getCurryPrice()));
-        imageView.setContentDescription(dataSet.get(listPosition).getCurryName());
-        imageView.setImageResource(dataSet.get(listPosition).getCurryImage());
-        Glide.with(context).load(dataSet.get(listPosition).getCurryImage())
+        textViewName.setText(dataSet.get(position).getCurryName());
+        textViewprice.setText(String.format("₹%s", dataSet.get(position).getCurryPrice()));
+        imageView.setContentDescription(dataSet.get(position).getCurryName());
+        imageView.setImageResource(dataSet.get(position).getCurryImage());
+        Glide.with(context).load(dataSet.get(position).getCurryImage())
                 .thumbnail(0.5f)
                 .crossFade()
                 .override(600, 400)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(imageView);
+
     }
 
     @Override
