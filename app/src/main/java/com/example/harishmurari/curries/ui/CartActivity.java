@@ -1,5 +1,6 @@
 package com.example.harishmurari.curries.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -24,14 +25,13 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnCur
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
-    Map<CurryItem, Integer> cartMap;
     private ArrayList<CurryItem> cartItems;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cart);
-        setTitle("CART");
+        setTitle("CART ITEMS");
 
         recyclerView = (RecyclerView) findViewById(R.id.cart_recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -40,8 +40,9 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnCur
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        Bundle data = getIntent().getExtras();
 
-        cartItems = new ArrayList<>(cartMap.keySet());
+        cartItems = data.getParcelableArrayList(Intent.EXTRA_TEXT);
         adapter = new CartAdapter(this, this, cartItems);
         recyclerView.setAdapter(adapter);
     }

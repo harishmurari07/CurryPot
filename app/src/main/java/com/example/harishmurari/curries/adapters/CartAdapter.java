@@ -32,8 +32,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
         public CartViewHolder(View itemView) {
             super(itemView);
-            this.textViewName = (TextView) itemView.findViewById(R.id.curry_name);
-            this.textViewprice = (TextView) itemView.findViewById(R.id.curry_price);
+            this.textViewName = (TextView) itemView.findViewById(R.id.cart_curry_name);
+            this.textViewprice = (TextView) itemView.findViewById(R.id.cart_item_price);
             this.quantity = (Spinner) itemView.findViewById(R.id.curry_quantity);
 
         }
@@ -59,7 +59,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @Override
     public void onBindViewHolder(CartViewHolder holder, int position) {
-       holder.textViewName.setText(cartItems.get(position).getCurryName());
+        holder.textViewName.setText(cartItems.get(position).getCurryName());
         holder.textViewprice.setText(String.valueOf(cartItems.get(position).getCurryPrice()));
 
     }

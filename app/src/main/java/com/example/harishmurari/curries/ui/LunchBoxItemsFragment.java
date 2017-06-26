@@ -27,15 +27,6 @@ public class LunchBoxItemsFragment extends Fragment implements Adapter.OnSelecte
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
     private static ArrayList<CurryItem> data;
-    private static LunchBoxItemsFragment lunchBoxItemsFragment;
-
-
-    public static LunchBoxItemsFragment getInstance() {
-        if(lunchBoxItemsFragment == null) {
-            lunchBoxItemsFragment = new LunchBoxItemsFragment();
-        }
-        return lunchBoxItemsFragment;
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
