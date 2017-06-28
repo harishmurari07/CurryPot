@@ -19,20 +19,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity android:name="com.example.harishmurari.curries.ui.VegetarianItemsFragment"-->
-        <!--android:parentActivityName=".ui.MainMenuActivity"/>-->
-        <!--<activity android:name="com.example.harishmurari.curries.ui.LunchBoxItemsFragmentgment"-->
-        <!--android:parentActivityName=".ui.MainMenuActivity"/>-->
-        <!--<activity android:name="com.example.harishmurari.curries.ui.NonVegetarianItemsFragmentgment"-->
-        <!--android:parentActivityName=".ui.MainMenuActivity"/>-->
-        <!--<activity android:name="com.example.harishmurari.curries.ui.WhiteRiceItemsFragmentgment"-->
-        <!--android:parentActivityName=".ui.MainMenuActivity"/>-->
-        <activity android:name="com.example.harishmurari.curries.ui.CartActivity" />
 
-        <activity android:name=".ui.VegetarianItemsActivity" />
-        <activity android:name=".ui.NonVegetarianItemsActivity" />
-        <activity android:name=".ui.WhiteRiceItemsActivity" />
-        <activity android:name=".ui.LunchBoxItemsActivity" />
+        <activity
+            android:name="com.example.harishmurari.curries.ui.CartActivity"
+            android:parentActivityName="com.example.harishmurari.curries.ui.MainMenuActivity" />
+
+        <activity
+            android:name="com.example.harishmurari.curries.ui.CurryDetailActivity"
+            android:parentActivityName="com.example.harishmurari.curries.ui.MainMenuActivity" />
+
+        <provider
+            android:name=".data.CurryProvider"
+            android:authorities="@string/content_authority"
+            android:exported="false" />
     </application>
 
 </manifest>

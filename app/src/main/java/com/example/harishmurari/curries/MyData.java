@@ -15,24 +15,60 @@ public class MyData {
     public static final int LUNCH_BOX = 3;
 
     //3 arrays should be in same order
-    public static String[] vegcurriesArray =
+    public static String[] curriesArray =
             {
                     "Palakura Pappu",
                     "Tomato Curry",
                     "Egg Curry",
                     "Bendakaya Fry",
                     "Egg Masala Curry",
-                    "Veg Manchuria"
+                    "Veg Manchuria",
+
+                    //non-veg curries
+                    "Chicken Fry",
+                    "Chicken Curry",
+                    "Fish Curry",
+                    "Chicken 65",
+                    "Mutton Curry",
+
+                    //rice Bowl
+                    "Small Bowl",
+                    "Large Bowl",
+                    "Jumbo Bowl",
+
+                    //thali
+                    "Lunch Box",
+                    "Thali",
+
+
             };
 
-    public static double [] price =
+    public static double [] curryPrice =
             {
                     15,
                     15,
                     25,
                     25,
                     35,
-                    20
+                    20,
+
+                    // non-veg prices
+                    25,
+                    25,
+                    35,
+                    30,
+                    50,
+
+                    // rice bowl
+                    20,
+                    30,
+                    50,
+
+                    //thali
+                    50,
+                    75,
+
+
             };
 
     public static Integer[] drawableArray =
@@ -42,9 +78,44 @@ public class MyData {
                     R.drawable.egg_curry,
                     R.drawable.bendakai_fry,
                     R.drawable.egg_masala,
-                    R.drawable.veg_manchurian
+                    R.drawable.veg_manchurian,
+
+                    //non-veg
+                    R.drawable.chicken_fry,
+                    R.drawable.chicken_curry,
+                    R.drawable.fish_pulusu,
+                    R.drawable.chicken_65,
+                    R.drawable.mutton_curry,
+
+                    //rice bowl
+                    R.drawable.white_rice_small,
+                    R.drawable.white_rice_medium,
+                    R.drawable.white_rice_jumbo,
+
+                    //thali
+                    R.drawable.lunch_box,
+                    R.drawable.thali
             };
 
+    public static String[] curryDescription =
+            {
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+            };
     public static String[] nonVegCurriesArray =
             {
                     "Chicken Fry",
