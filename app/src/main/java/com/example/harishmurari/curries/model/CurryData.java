@@ -1,10 +1,12 @@
-package com.example.harishmurari.curries;
+package com.example.harishmurari.curries.model;
+
+import com.example.harishmurari.curries.R;
 
 /**
  * Created by harishmurari on 6/5/2017.
  */
 
-public class MyData {
+public class CurryData {
 
     public static final int PALAKURA_PAPPU = 0;
     public static final int TOMATO_CURRY = 1;

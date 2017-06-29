@@ -17,7 +17,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.harishmurari.curries.MyData;
+import com.example.harishmurari.curries.model.CurryData;
 import com.example.harishmurari.curries.R;
 import com.example.harishmurari.curries.data.CurrryCartHelper;
 import com.example.harishmurari.curries.data.CurryContract;
@@ -102,7 +102,7 @@ public class CurryDetailActivity extends AppCompatActivity implements View.OnCli
         setTitle(curryItem.curryName);
         curryDescription.setText(curryItem.curryDescription);
         curryPrice.setText(getString(R.string.curry_price, curryItem.curryPrice));
-        curryImage.setImageResource(MyData.getResourceDrawable(curryItem.curryImage));
+        curryImage.setImageResource(CurryData.getResourceDrawable(curryItem.curryImage));
     }
 
     @Override

@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.harishmurari.curries.MyData;
+import com.example.harishmurari.curries.model.CurryData;
 
 /**
  * Created by kaika on 6/28/2017.
@@ -61,10 +61,10 @@ public class CurryDatabaseHelper extends SQLiteOpenHelper {
         }
         cursor.close();
 
-        String[] curryNames = MyData.curriesArray;
-        String[] curryDescription = MyData.curryDescription;
-        double[] curryPrice = MyData.curryPrice;
-        Integer[] curryImages = MyData.drawableArray;
+        String[] curryNames = CurryData.curriesArray;
+        String[] curryDescription = CurryData.curryDescription;
+        double[] curryPrice = CurryData.curryPrice;
+        Integer[] curryImages = CurryData.drawableArray;
 
         if (curryNames.length != curryDescription.length
                 && curryDescription.length != curryPrice.length) {
