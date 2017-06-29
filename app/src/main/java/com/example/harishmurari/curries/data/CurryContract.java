@@ -51,6 +51,7 @@ public class CurryContract {
         public static final String COLUMN_CURRY_PRICE = "price";
         public static final String COLUMN_CART_QUANTITY = "cart_quantity";
         public static final String COLUMN_PURCHASED_QUANTITY = "purchased_quantity";
+        public static final String COLUMN_CURRY_IMAGE = "curry_image";
 
         public static String getIdFromUri(Uri uri) {
             return uri.getLastPathSegment();

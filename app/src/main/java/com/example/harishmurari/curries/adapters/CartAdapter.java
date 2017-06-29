@@ -39,7 +39,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             this.textViewName = (TextView) itemView.findViewById(R.id.curry_item_name);
             this.textViewprice = (TextView) itemView.findViewById(R.id.curry_item_price);
             this.textViewItemQuantity = (TextView) itemView.findViewById(R.id.text_view_item_quantity);
-            this.textViewTotalPrice =(TextView) itemView.findViewById(R.id.text_view_total_price);
+            this.textViewTotalPrice = (TextView) itemView.findViewById(R.id.text_view_total_price);
             buttonSubtract = (Button) itemView.findViewById(R.id.button_quantity_subtract);
             buttonAdd = (Button) itemView.findViewById(R.id.button_quantity_add);
             buttonRemove = (ImageButton) itemView.findViewById(R.id.imagebutton_remove_cart);

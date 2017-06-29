@@ -15,14 +15,16 @@ public class CurryItem {
     public int id;
     public String curryName;
     public String curryDescription;
+    public int curryImage;
     public int curryPrice;
     public int cartQuantity;
     public int purchasedQuantity;
 
-    public CurryItem(int id, String curryName, int curryPrice, String curryDescription, int cartQuantity, int purchasedQuantity) {
+    public CurryItem(int id, String curryName, int curryPrice, int curryImage, String curryDescription, int cartQuantity, int purchasedQuantity) {
         this.id = id;
         this.curryName = curryName;
         this.curryDescription = curryDescription;
+        this.curryImage = curryImage;
         this.curryPrice = curryPrice;
         this.cartQuantity = cartQuantity;
         this.purchasedQuantity = purchasedQuantity;
@@ -35,7 +37,7 @@ public class CurryItem {
         int columnPrice = c.getColumnIndex(CurryContract.CurryEntry.COLUMN_CURRY_PRICE);
         int columnCartQuantity = c.getColumnIndex(CurryContract.CurryEntry.COLUMN_CART_QUANTITY);
         int columnPurchasedQuantity = c.getColumnIndex(CurryContract.CurryEntry.COLUMN_PURCHASED_QUANTITY);
-
+        int columnCurryImage = c.getColumnIndexOrThrow(CurryContract.CurryEntry.COLUMN_CURRY_IMAGE);
         if (c.getCount() == 0) {
             return;
         }
@@ -57,6 +59,9 @@ public class CurryItem {
         }
         if (columnPurchasedQuantity != -1) {
             this.purchasedQuantity = c.getInt(columnPurchasedQuantity);
+        }
+        if (columnCurryImage != -1) {
+            this.curryImage = c.getInt(columnCurryImage);
         }
     }
 

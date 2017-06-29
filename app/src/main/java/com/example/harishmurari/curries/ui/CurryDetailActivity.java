@@ -14,8 +14,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.harishmurari.curries.MyData;
 import com.example.harishmurari.curries.R;
 import com.example.harishmurari.curries.data.CurrryCartHelper;
 import com.example.harishmurari.curries.data.CurryContract;
@@ -39,6 +41,7 @@ public class CurryDetailActivity extends AppCompatActivity implements View.OnCli
     private Toolbar toolbar;
     private TextView curryDescription;
     private TextView curryPrice;
+    private ImageView curryImage;
 
     public static void startActivity(Context context, int itemPosition) {
         Intent i = new Intent(context, CurryDetailActivity.class);
@@ -54,6 +57,7 @@ public class CurryDetailActivity extends AppCompatActivity implements View.OnCli
         toolbar.setTitle("");
         curryDescription = (TextView) findViewById(R.id.text_view_item_description);
         curryPrice = (TextView) findViewById(R.id.text_view_item_price);
+        curryImage = (ImageView) findViewById(R.id.curryImage);
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         setSupportActionBar(toolbar);
@@ -75,7 +79,8 @@ public class CurryDetailActivity extends AppCompatActivity implements View.OnCli
                 CurryContract.CurryEntry._ID,
                 CurryContract.CurryEntry.COLUMN_CURRY_NAME,
                 CurryContract.CurryEntry.COLUMN_CURRY_DESCRIPTION,
-                CurryContract.CurryEntry.COLUMN_CURRY_PRICE
+                CurryContract.CurryEntry.COLUMN_CURRY_PRICE,
+                CurryContract.CurryEntry.COLUMN_CURRY_IMAGE
         };
         String selection = CurryContract.CurryEntry._ID + " = " + mItemId;
         return new CursorLoader(this,
@@ -96,6 +101,7 @@ public class CurryDetailActivity extends AppCompatActivity implements View.OnCli
         toolbar.setTitle(curryItem.curryName);
         curryDescription.setText(curryItem.curryDescription);
         curryPrice.setText(getString(R.string.curry_price, curryItem.curryPrice));
+        curryImage.setImageResource(MyData.getResourceDrawable(curryItem.curryImage));
     }
 
     @Override

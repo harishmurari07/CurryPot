@@ -32,6 +32,7 @@ public class CurryDatabaseHelper extends SQLiteOpenHelper {
                 + CurryContract.CurryEntry.COLUMN_CURRY_NAME + " TEXT NOT NULL, "
                 + CurryContract.CurryEntry.COLUMN_CURRY_DESCRIPTION + " TEXT NOT NULL, "
                 + CurryContract.CurryEntry.COLUMN_CURRY_PRICE + " INTEGER NOT NULL, "
+                + CurryContract.CurryEntry.COLUMN_CURRY_IMAGE + " INTEGER NOT NULL, "
                 + CurryContract.CurryEntry.COLUMN_CART_QUANTITY + " INTEGER NOT NULL, "
                 + CurryContract.CurryEntry.COLUMN_PURCHASED_QUANTITY + " INTEGER NOT NULL);";
 
@@ -75,8 +76,10 @@ public class CurryDatabaseHelper extends SQLiteOpenHelper {
             values.put(CurryContract.CurryEntry.COLUMN_CURRY_NAME, curryNames[i]);
             values.put(CurryContract.CurryEntry.COLUMN_CURRY_DESCRIPTION, curryDescription[i]);
             values.put(CurryContract.CurryEntry.COLUMN_CURRY_PRICE, curryPrice[i]);
+            values.put(CurryContract.CurryEntry.COLUMN_CURRY_IMAGE, curryImages[i]);
             values.put(CurryContract.CurryEntry.COLUMN_CART_QUANTITY, 0);
             values.put(CurryContract.CurryEntry.COLUMN_PURCHASED_QUANTITY, 0);
+
 
             db.insert(CurryContract.CurryEntry.TABLE_NAME, null, values);
         }
@@ -86,6 +89,7 @@ public class CurryDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS" + CurryContract.CurryEntry.TABLE_NAME);
+        onCreate(db);
     }
 }

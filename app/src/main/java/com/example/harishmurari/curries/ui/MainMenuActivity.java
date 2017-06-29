@@ -1,11 +1,8 @@
 package com.example.harishmurari.curries.ui;
 
-import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
@@ -14,17 +11,13 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.harishmurari.curries.R;
-import com.example.harishmurari.curries.Utility;
 import com.example.harishmurari.curries.adapters.CurryAdapter;
 import com.example.harishmurari.curries.data.CurryContract;
 import com.facebook.stetho.Stetho;
-
-import java.util.ArrayList;
 
 /**
  * Created by harishmurari on 6/7/2017.
@@ -99,7 +92,8 @@ public class MainMenuActivity extends AppCompatActivity implements LoaderManager
                 CurryContract.CurryEntry._ID,
                 CurryContract.CurryEntry.COLUMN_CURRY_NAME,
                 CurryContract.CurryEntry.COLUMN_CURRY_DESCRIPTION,
-                CurryContract.CurryEntry.COLUMN_CURRY_PRICE
+                CurryContract.CurryEntry.COLUMN_CURRY_PRICE,
+                CurryContract.CurryEntry.COLUMN_CURRY_IMAGE
         };
 
         return new CursorLoader(this,
