@@ -42,9 +42,10 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.cart_toolbar);
-        toolbar.setTitle(R.string.shopping_cart_title);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.cart_toolbar);
+//        toolbar.setTitle(R.string.shopping_cart_title);
+//        setSupportActionBar(toolbar);
+        setTitle(R.string.shopping_cart_title);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
             supportActionBar.setDisplayHomeAsUpEnabled(true);

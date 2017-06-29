@@ -53,14 +53,15 @@ public class CurryDetailActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_curry_detail);
-        toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
-        toolbar.setTitle("");
+//        toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
+//        toolbar.setTitle("");
+
         curryDescription = (TextView) findViewById(R.id.text_view_item_description);
         curryPrice = (TextView) findViewById(R.id.text_view_item_price);
         curryImage = (ImageView) findViewById(R.id.curryImage);
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
-        setSupportActionBar(toolbar);
+//        setSupportActionBar(toolbar);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
             supportActionBar.setDisplayHomeAsUpEnabled(true);
@@ -98,7 +99,7 @@ public class CurryDetailActivity extends AppCompatActivity implements View.OnCli
         cursor.moveToFirst();
 
         curryItem = new CurryItem(data);
-        toolbar.setTitle(curryItem.curryName);
+        setTitle(curryItem.curryName);
         curryDescription.setText(curryItem.curryDescription);
         curryPrice.setText(getString(R.string.curry_price, curryItem.curryPrice));
         curryImage.setImageResource(MyData.getResourceDrawable(curryItem.curryImage));
