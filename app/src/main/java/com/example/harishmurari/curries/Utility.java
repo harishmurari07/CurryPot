@@ -23,7 +23,6 @@ public class Utility {
 
     private static final String TAG = Utility.class.getSimpleName();
 
-    private static final String BUTTON_STATE_KEY = "button-state";
     public static String PREFERENCE_FILE = "cart_items_prefs";
     private static Gson gson;
 

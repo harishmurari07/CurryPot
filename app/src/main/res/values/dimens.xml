@@ -1,3 +1,11 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="standard_app_bar_height">56dp</dimen>
+    <dimen name="detail_item_padding">24dp</dimen>
+    <dimen name="detail_container_margin">36dp</dimen>
+    <dimen name="button_width_remove">32dp</dimen>
+    <dimen name="text_size_cart_quantity_button">16sp</dimen>
+
 </resources>
