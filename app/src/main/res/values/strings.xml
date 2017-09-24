@@ -16,6 +16,7 @@
     <string name="content_authority">com.example.harishmurari.curries</string>
     <string name="curry_price">Price: %1$d</string>
     <string name="shopping_cart_item_added">Added to shopping cart</string>
+    <string name="menu_sign_off">SignOff</string>
     <plurals name="number_of_items">
         <!--
              As a developer, you should always supply "one" and "other"

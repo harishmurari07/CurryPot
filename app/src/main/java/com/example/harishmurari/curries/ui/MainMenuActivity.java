@@ -18,6 +18,7 @@ import com.example.harishmurari.curries.R;
 import com.example.harishmurari.curries.adapters.CurryAdapter;
 import com.example.harishmurari.curries.data.CurryContract;
 import com.facebook.stetho.Stetho;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * Created by harishmurari on 6/7/2017.
@@ -26,6 +27,8 @@ import com.facebook.stetho.Stetho;
 public class MainMenuActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final String INTENT_CURRY_ITEM_EXTRA = "intent_curry_item_extra";
+
+    private FirebaseAuth firebaseAuth;
 
     CurryAdapter curryAdapter;
 
@@ -50,6 +53,9 @@ public class MainMenuActivity extends AppCompatActivity implements LoaderManager
         recyclerView.setAdapter(curryAdapter);
 
         getSupportLoaderManager().initLoader(CURRY_LOADER, null, this);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
     }
 
     private void initailizeStetho() {
@@ -81,6 +87,12 @@ public class MainMenuActivity extends AppCompatActivity implements LoaderManager
             case R.id.menu_my_profile:
 
                 return true;
+
+            case R.id.menu_sign_off:
+                //  AuthUI.getInstance().signOut();
+                // FirebaseAuth.getInstance().signOut();
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
