@@ -1,5 +1,6 @@
-package com.example.harishmurari.curries.ui;
+package com.currypot.curries.ui;
 
+import android.app.ProgressDialog;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,9 +15,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.harishmurari.curries.R;
-import com.example.harishmurari.curries.adapters.CurryAdapter;
-import com.example.harishmurari.curries.data.CurryContract;
+import com.currypot.curries.R;
+import com.currypot.curries.adapters.CurryAdapter;
+import com.currypot.curries.data.CurryContract;
 import com.facebook.stetho.Stetho;
 
 /**
@@ -36,6 +37,9 @@ public class MainMenuActivity extends AppCompatActivity implements LoaderManager
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         initailizeStetho();
+//        ProgressDialog dialog = new ProgressDialog(this);
+//        dialog.setMessage("Loading...");
+//        dialog.show();
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 

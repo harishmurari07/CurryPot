@@ -1,4 +1,4 @@
-package com.example.harishmurari.curries.ui;
+package com.currypot.curries.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,9 +20,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.harishmurari.curries.R;
-import com.example.harishmurari.curries.adapters.CartAdapter;
-import com.example.harishmurari.curries.data.CurryContract;
+import com.currypot.curries.R;
+import com.currypot.curries.adapters.CartAdapter;
+import com.currypot.curries.data.CurryContract;
+
 
 /**
  * Created by harishmurari on 6/15/2017.

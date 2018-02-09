@@ -1,4 +1,4 @@
-package com.example.harishmurari.curries.adapters;
+package com.currypot.curries.adapters;
 
 import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
@@ -7,9 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.harishmurari.curries.R;
-import com.example.harishmurari.curries.data.CurryContract;
-import com.example.harishmurari.curries.ui.CurryDetailActivity;
+import com.currypot.curries.R;
+import com.currypot.curries.data.CurryContract;
+import com.currypot.curries.ui.CurryDetailActivity;
+
 
 public class CurryAdapter extends RecyclerView.Adapter<CurryAdapter.MyViewHolder> {
 

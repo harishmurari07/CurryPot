@@ -1,6 +1,7 @@
-package com.example.harishmurari.curries.model;
+package com.currypot.curries.model;
 
-import com.example.harishmurari.curries.R;
+
+import com.currypot.curries.R;
 
 /**
  * Created by harishmurari on 6/5/2017.

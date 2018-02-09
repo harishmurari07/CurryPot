@@ -1,4 +1,4 @@
-package com.example.harishmurari.curries.ui;
+package com.currypot.curries.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,11 +17,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.harishmurari.curries.model.CurryData;
-import com.example.harishmurari.curries.R;
-import com.example.harishmurari.curries.data.CurrryCartHelper;
-import com.example.harishmurari.curries.data.CurryContract;
-import com.example.harishmurari.curries.model.CurryItem;
+import com.currypot.curries.R;
+import com.currypot.curries.data.CurrryCartHelper;
+import com.currypot.curries.data.CurryContract;
+import com.currypot.curries.model.CurryData;
+import com.currypot.curries.model.CurryItem;
+
 
 /**
  * Created by kaika on 6/28/2017.

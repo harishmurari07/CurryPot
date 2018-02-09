@@ -1,4 +1,4 @@
-package com.example.harishmurari.curries;
+package com.currypot.curries;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -6,7 +6,7 @@ import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.example.harishmurari.curries.model.CurryItem;
+import com.currypot.curries.model.CurryItem;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

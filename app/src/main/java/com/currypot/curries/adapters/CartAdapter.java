@@ -1,4 +1,4 @@
-package com.example.harishmurari.curries.adapters;
+package com.currypot.curries.adapters;
 
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -11,9 +11,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.harishmurari.curries.R;
-import com.example.harishmurari.curries.data.CurrryCartHelper;
-import com.example.harishmurari.curries.data.CurryContract;
+import com.currypot.curries.R;
+import com.currypot.curries.data.CurrryCartHelper;
+import com.currypot.curries.data.CurryContract;
+
 
 /**
  * Created by harishmurari on 6/15/2017.

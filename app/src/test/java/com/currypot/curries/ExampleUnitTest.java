@@ -1,4 +1,4 @@
-package com.example.harishmurari.curries;
+package com.currypot.curries;
 
 import org.junit.Test;
 

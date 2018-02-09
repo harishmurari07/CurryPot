@@ -1,10 +1,11 @@
-package com.example.harishmurari.curries.model;
+package com.currypot.curries.model;
 
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.example.harishmurari.curries.data.CurryContract;
+import com.currypot.curries.data.CurryContract;
+
 
 /**
  * Created by harishmurari on 6/5/2017.

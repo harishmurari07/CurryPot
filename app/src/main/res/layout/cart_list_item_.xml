@@ -15,8 +15,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        tools:text="Item Name"/>
+        android:ellipsize="end"
+        android:maxEms="14"
+        android:marqueeRepeatLimit="10"
+        android:layout_marginStart="8dp"
+        tools:text="Item Name"
+        android:singleLine="true" />
 
     <TextView
         android:id="@+id/curry_item_price"

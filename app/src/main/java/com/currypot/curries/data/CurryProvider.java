@@ -1,4 +1,4 @@
-package com.example.harishmurari.curries.data;
+package com.currypot.curries.data;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;

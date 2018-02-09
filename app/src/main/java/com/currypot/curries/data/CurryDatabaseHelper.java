@@ -1,4 +1,4 @@
-package com.example.harishmurari.curries.data;
+package com.currypot.curries.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.harishmurari.curries.model.CurryData;
+import com.currypot.curries.model.CurryData;
+
 
 /**
  * Created by kaika on 6/28/2017.
@@ -89,7 +90,7 @@ public class CurryDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS" + CurryContract.CurryEntry.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + CurryContract.CurryEntry.TABLE_NAME);
         onCreate(db);
     }
 }

@@ -13,7 +13,7 @@
     <string name="shopping_cart_remove_description">Remove from cart</string>
     <string name="chevron_left">\u2039</string>
     <string name="chevron_right">\u203A</string>
-    <string name="content_authority">com.example.harishmurari.curries</string>
+    <string name="content_authority">com.currypot.curries</string>
     <string name="curry_price">Price: %1$d</string>
     <string name="shopping_cart_item_added">Added to shopping cart</string>
     <plurals name="number_of_items">

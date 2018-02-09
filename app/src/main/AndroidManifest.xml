@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.harishmurari.curries">
+    package="com.currypot.curries">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.harishmurari.curries.ui.MainMenuActivity"
+            android:name=".ui.MainMenuActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,12 +21,12 @@
         </activity>
 
         <activity
-            android:name="com.example.harishmurari.curries.ui.CartActivity"
-            android:parentActivityName="com.example.harishmurari.curries.ui.MainMenuActivity" />
+            android:name=".ui.CartActivity"
+            android:parentActivityName=".ui.MainMenuActivity" />
 
         <activity
-            android:name="com.example.harishmurari.curries.ui.CurryDetailActivity"
-            android:parentActivityName="com.example.harishmurari.curries.ui.MainMenuActivity" />
+            android:name=".ui.CurryDetailActivity"
+            android:parentActivityName=".ui.MainMenuActivity" />
 
         <provider
             android:name=".data.CurryProvider"

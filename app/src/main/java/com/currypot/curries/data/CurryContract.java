@@ -1,4 +1,4 @@
-package com.example.harishmurari.curries.data;
+package com.currypot.curries.data;
 
 import android.content.ContentResolver;
 import android.content.ContentUris;
@@ -13,7 +13,7 @@ public class CurryContract {
 
     private CurryContract() {}
 
-    public static final String CONTENT_AUTHORITY = "com.example.harishmurari.curries";
+    public static final String CONTENT_AUTHORITY = "com.currypot.curries";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
     public static final String PATH_CURRY = "curry";
